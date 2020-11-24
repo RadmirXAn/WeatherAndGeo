@@ -20,9 +20,9 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let coord = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(lon)!)
-        let mRegion = MKCoordinateRegion(center: coord, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        mapView.setRegion(mRegion, animated: true)
+        let center = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(lon)!)
+        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        mapView.setRegion(region, animated: true)
     }
     
 
